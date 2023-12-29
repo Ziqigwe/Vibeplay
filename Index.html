@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+        }
+        .form-container h1 {
+            color: #1877F2;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .action-link {
+            color: #1877F2;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: underline;
+        }
+        .social-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .google-button {
+            background-color: #DB4437;
+            color: #fff;
+        }
+        .facebook-button {
+            background-color: #1877F2;
+            color: #fff;
+        }
+        .twitter-button {
+            background-color: #1DA1F2;
+            color: #fff;
+        }
+        .reddit-button {
+            background-color: #FF5700;
+            color: #fff;
+        }
+        .login-button {
+            background-color: #1877F2;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        /* Media query for mobile responsiveness */
+        @media (max-width: 600px) {
+            .form-container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container" id="loginForm">
+        <h1>Login/Sign Up</h1>
+        <div class="button-container">
+            <button class="google-button social-button" onclick="signInWithGoogle()">Sign in with Google</button>
+            <button class="facebook-button social-button" onclick="signInWithFacebook()">Sign in with Facebook</button>
+            <button class="twitter-button social-button" onclick="signInWithTwitter()">Sign in with Twitter</button>
+            <button class="reddit-button social-button" onclick="signInWithReddit()">Sign in with Reddit</button>
+        </div>
+        <p class="action-link" onclick="showSignupForm()">Don't have an account?</p>
+    </div>
+
+    <div class="form-container" id="signupForm" style="display:none;">
+        <h1>Sign Up</h1>
+        <div class="button-container">
+            <button class="google-button social-button" onclick="signUpWithGoogle()">Sign up with Google</button>
+            <button class="facebook-button social-button" onclick="signUpWithFacebook()">Sign up with Facebook</button>
+            <button class="twitter-button social-button" onclick="signUpWithTwitter()">Sign up with Twitter</button>
+            <button class="reddit-button social-button" onclick="signUpWithReddit()">Sign up with Reddit</button>
+        </div>
+        <p class="action-link" onclick="showLoginForm()">Already have an account?</p>
+    </div>
+
+    <script>
+        function signInWithGoogle() {
+            // Redirect to Google authentication page
+            window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token';
+        }
+
+        function signInWithFacebook() {
+            // Redirect to Facebook authentication page
+            window.location.href = 'https://www.facebook.com/v12.0/dialog/oauth?client_id=YOUR_FACEBOOK_APP_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token';
+        }
+
+        function signInWithTwitter() {
+            // Redirect to Twitter authentication page
+            // You would typically use Twitter OAuth here
+        }
+
+        function signInWithReddit() {
+            // Redirect to Reddit authentication page
+            // You would typically use Reddit OAuth here
+        }
+
+        function signUpWithGoogle() {
+            // Similar to signInWithGoogle, but for signup
+            // You can customize this based on your needs
+        }
+
+        function signUpWithFacebook() {
+            // Similar to signInWithFacebook, but for signup
+            // You can customize this based on your needs
+        }
+
+        function signUpWithTwitter() {
+            // Similar to signInWithTwitter, but for signup
+            // You would typically use Twitter OAuth here
+        }
+
+        function signUpWithReddit() {
+            // Similar to signInWithReddit, but for signup
+            // You would typically use Reddit OAuth here
+        }
+
+        function showSignupForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        }
+
+        function showLoginForm() {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
